@@ -13,7 +13,6 @@ class Input extends Component {
     this.setState({
       input1: evt.target.value
     })
-    console.log(this.state.input1)
   }
 
   updateinput2 = (evt) => {
@@ -23,11 +22,20 @@ class Input extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <TextField input={this.updateinput1} /> x <TextField input={this.updateinput2}/> = {this.state.input1*this.state.input2}
-      </div>
-    )
+    if ((this.state.input1 === "" && this.state.input2 === "") || this.state.input1 === "" || this.state.input2 === "") {
+        return (
+        <div>
+          <TextField input={this.updateinput1} /> x <TextField input={this.updateinput2}/> = 
+        </div>
+      )
+    }
+    else{
+        return (
+        <div>
+          <TextField input={this.updateinput1} /> x <TextField input={this.updateinput2}/> = {this.state.input1*this.state.input2}
+        </div>
+      )
+    }
   }
 }
 
