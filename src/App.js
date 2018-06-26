@@ -1,31 +1,31 @@
 import React, { Component } from 'react';
+import Input from './input';
 
 class App extends Component {
+
   state = {
-    input1 : "",
-    input2 : ""
-  }
-  
-  updateinput1 = (evt) => {
-    console.log(this.state.input1)
-    this.setState({
-      input1 : evt.target.value,
-      result : this.state.input1*this.state.input2
-    })
+    row : [],
+    row_count : 0
   }
 
-  updateinput2 = (evt) => {
-    this.setState({
-      input2 : evt.target.value,
-      result : this.state.input1*this.state.input2
-    })
-
+  Add = () => {
+    const row = this.state.row;
+      this.setState({
+          row: row.concat(this.state.row_count+1),
+          row_count: this.state.row_count+1
+      });
   }
 
   render() {
+
+    const itemlist = this.state.row.map( (row) => {
+      return <Input key={row} />
+    })
     return (
       <div className="App">
-        <input type="text" onChange={this.updateinput1} /> x <input type="text" onChange={this.updateinput2}/> = {this.state.input1*this.state.input2}
+        <button type="button" onClick={this.Add} >Add</button>
+        <Input />
+        {itemlist}
       </div>
     );
   }
