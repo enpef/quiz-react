@@ -17,7 +17,6 @@ class App extends Component {
   }
 
   render() {
-
     const itemlist = this.state.row.map( (row) => {
       return <Input key={row} />
     })
