@@ -26,14 +26,14 @@ class Input extends Component {
     if ((this.state.input1 === "" && this.state.input2 === "") || this.state.input1 === "" || this.state.input2 === "") {
         return (
         <div>
-          <TextField input={this.updateinput1} /> x <TextField input={this.updateinput2}/> = 
+          <TextField input={this.updateinput1} /> x <TextField input={this.updateinput2}/> = <Result total={this.props.total} id={this.props.id} />
         </div>
       )
     }
     else{
         return (
         <div>
-          <TextField input={this.updateinput1} /> x <TextField input={this.updateinput2}/> = <Result input1={this.state.input1} input2={this.state.input2} />
+          <TextField input={this.updateinput1} /> x <TextField input={this.updateinput2}/> = <Result total={this.props.total} id={this.props.id} input1={this.state.input1} input2={this.state.input2} />
         </div>
       )
     }
