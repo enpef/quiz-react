@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TextField from "./textfield";
+import Result from './result';
 
 class Input extends Component {
 
@@ -32,7 +33,7 @@ class Input extends Component {
     else{
         return (
         <div>
-          <TextField input={this.updateinput1} /> x <TextField input={this.updateinput2}/> = {this.state.input1*this.state.input2}
+          <TextField input={this.updateinput1} /> x <TextField input={this.updateinput2}/> = <Result input1={this.state.input1} input2={this.state.input2} />
         </div>
       )
     }
