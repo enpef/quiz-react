@@ -33,7 +33,7 @@ class App extends Component {
     })
     return (
       <div className="App">
-        <button type="button" onClick={this.Add} >Add</button> <span id="total">Total : </span>
+        <button type="button" onClick={this.Add} >Add Row</button> <span id="total">Total : </span>
         {itemlist}
       </div>
     );
