@@ -25,12 +25,11 @@ class App extends Component {
       }
     }
     document.getElementById("total").innerHTML = "Total : " + total
-    console.log(total)
   }
 
   render() {
     const itemlist = this.state.row.map( (row) => {
-      return <Input total={this.Total} id={row} key={row} />
+      return <Input total={this.Total.bind(this)} id={row} key={row} />
     })
     return (
       <div className="App">
