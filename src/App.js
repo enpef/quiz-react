@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import "./App.css";
 
 import Input from './input';
 
@@ -34,18 +35,20 @@ class App extends Component {
       border-radius: 3px;
       padding: 0.25em 1em;
       margin: 0 1em;
-      background: transparent;
-      color: palevioletred;
-      border: 2px solid palevioletred;
+      background: #e6e6e6;
+      color: #737373;
+      border: 2px solid #737373;
     `;
-    
+
     const itemlist = this.state.row.map( (row) => {
       return <Input total={this.Total.bind(this)} id={row} key={row} />
     })
     return (
       <div className="App">
         <Button type="button" onClick={this.Add} >Add Row</Button> <span id="total">Total : </span>
-        {itemlist}
+        <div className="App-row">
+          {itemlist}
+        </div>
       </div>
     );
   }
