@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+
 import Input from './input';
 
 class App extends Component {
@@ -28,12 +30,21 @@ class App extends Component {
   }
 
   render() {
+    const Button = styled.button`
+      border-radius: 3px;
+      padding: 0.25em 1em;
+      margin: 0 1em;
+      background: transparent;
+      color: palevioletred;
+      border: 2px solid palevioletred;
+    `;
+    
     const itemlist = this.state.row.map( (row) => {
       return <Input total={this.Total.bind(this)} id={row} key={row} />
     })
     return (
       <div className="App">
-        <button type="button" onClick={this.Add} >Add Row</button> <span id="total">Total : </span>
+        <Button type="button" onClick={this.Add} >Add Row</Button> <span id="total">Total : </span>
         {itemlist}
       </div>
     );
