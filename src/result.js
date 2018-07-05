@@ -4,7 +4,9 @@ class Result extends Component {
 
   componentDidUpdate(prevProps,nextProps) {
     if(this.props.total) {
-      this.props.total()
+      const result = this.props.input1*this.props.input2
+      const id = this.props.id
+      this.props.total(result, id)
     }
   }
 

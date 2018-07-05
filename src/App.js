@@ -8,7 +8,8 @@ class App extends Component {
 
   state = {
     row : [0],
-    total : 0
+    total : 0,
+    Result : []
   }
 
   Add = () => {
@@ -18,17 +19,18 @@ class App extends Component {
       });
   }
 
-  Total = () => {
+  Total = (result, id) => {
     const count = this.state.row
     var total = 0
+    const Result = this.state.Result
+    Result[id] = result
     for(const i in count){
-      if(document.getElementById(i) != null){
-        var num = Number(document.getElementById(i).innerHTML)
-        total += num
+      if(Result[i]){
+        total += Result[i] 
       }
     }
     document.getElementById("total").innerHTML = "Total : " + total
-  }
+ }
 
   render() {
     const Button = styled.button`
