@@ -13,12 +13,12 @@ class Result extends Component {
   render() {
     if(this.props.input1 && this.props.input2 != null) {
       return (
-        <span id={this.props.id}>{this.props.input1*this.props.input2}</span>
+        <span>{this.props.input1*this.props.input2}</span>
       )
     }
     else {
       return (
-        <span id={this.props.id}></span>
+        <span></span>
       )
     }
 
