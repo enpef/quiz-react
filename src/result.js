@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 
 class Result extends Component {
 
-  componentDidUpdate(prevProps,nextProps) {
-    if(this.props.total) {
-      const result = this.props.input1*this.props.input2
-      const id = this.props.id
-      this.props.total(result, id)
+  state = {
+    total: ""
+  }
+
+  componentWillReceiveProps(nextProps){
+    if(nextProps.input1 && nextProps.input2 && (nextProps.input1 !== this.props.input1 || nextProps.input2 !== this.props.input2)){
+      const result = nextProps.input1*nextProps.input2
+      const id = nextProps.id
+      let total = nextProps.total(result, id)
+      this.props.set_total(total)
     }
   }
 
